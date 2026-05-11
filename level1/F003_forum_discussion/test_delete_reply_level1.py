@@ -1,10 +1,12 @@
-import csv
 import os
 import time
 import unittest
 import uuid
 
-from selenium import webdriver
+from common.driver_factory import DriverFactory
+from common.login_helper import LoginHelper
+from common.csv_reader import CSVReader
+
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException, StaleElementReferenceException
 from selenium.webdriver.support.ui import WebDriverWait
@@ -19,55 +21,20 @@ class ForumDeleteReplyLevel1(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome()
-        cls.driver.maximize_window()
+        cls.driver = DriverFactory.get_driver()
         cls.wait = WebDriverWait(cls.driver, 15)
-        cls.login()
+        LoginHelper.login(cls.driver)
 
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
 
-    @classmethod
-    def login(cls):
-        driver = cls.driver
-        wait = cls.wait
-
-        for _ in range(3):
-            driver.get("https://school.moodledemo.net/login/index.php")
-
-            try:
-                username_input = wait.until(EC.element_to_be_clickable((By.ID, "username")))
-                username_input.clear()
-                username_input.send_keys("student")
-
-                password_input = wait.until(EC.element_to_be_clickable((By.ID, "password")))
-                password_input.clear()
-                password_input.send_keys("moodle26")
-
-                wait.until(EC.element_to_be_clickable((By.ID, "loginbtn"))).click()
-                wait.until(EC.presence_of_element_located((By.ID, "page")))
-                return
-
-            except (TimeoutException, StaleElementReferenceException):
-                continue
-
-        raise TimeoutException("Login failed after retries.")
-
     def ensure_logged_in(self, return_url=None):
-        try:
-            WebDriverWait(self.driver, 5).until(
-                EC.presence_of_element_located((By.ID, "user-menu-toggle"))
-            )
-            return
-        except TimeoutException:
-            self.login()
-            if return_url:
-                self.driver.get(return_url)
+        LoginHelper.ensure_logged_in(self.driver, return_url=return_url)
 
     def read_test_data(self):
-        with open(DATA_FILE, newline="", encoding="utf-8") as file:
-            return list(csv.DictReader(file, delimiter="\t"))
+        return CSVReader.read_data(DATA_FILE)
+
 
     def input_tinymce_message(self, message):
         driver = self.driver
