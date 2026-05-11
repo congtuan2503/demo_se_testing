@@ -1,8 +1,10 @@
-import csv
 import os
 import unittest
 
-from selenium import webdriver
+from common.driver_factory import DriverFactory
+from common.login_helper import LoginHelper
+from common.csv_reader import CSVReader
+
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import TimeoutException
 from selenium.webdriver.support.ui import WebDriverWait
@@ -17,45 +19,20 @@ class ForumCreateDiscussionLevel1(unittest.TestCase):
 
     @classmethod
     def setUpClass(cls):
-        cls.driver = webdriver.Chrome()
-        cls.driver.maximize_window()
+        cls.driver = DriverFactory.get_driver()
         cls.wait = WebDriverWait(cls.driver, 15)
-
-        cls.login()
+        LoginHelper.login(cls.driver)
 
     @classmethod
     def tearDownClass(cls):
         cls.driver.quit()
 
-    @classmethod
-    def login(cls):
-        driver = cls.driver
-        wait = cls.wait
-
-        driver.get("https://school.moodledemo.net/login/index.php")
-
-        wait.until(EC.visibility_of_element_located((By.ID, "username"))).send_keys("student")
-        driver.find_element(By.ID, "password").send_keys("moodle26")
-        driver.find_element(By.ID, "loginbtn").click()
-
-        wait.until(EC.presence_of_element_located((By.ID, "page")))
-
     def ensure_logged_in(self, return_url=None):
-        driver = self.driver
-
-        try:
-            WebDriverWait(driver, 5).until(
-                EC.presence_of_element_located((By.ID, "user-menu-toggle"))
-            )
-            return
-        except TimeoutException:
-            self.login()
-            if return_url:
-                driver.get(return_url)
+        LoginHelper.ensure_logged_in(self.driver, return_url=return_url)
 
     def read_test_data(self):
-        with open(DATA_FILE, newline="", encoding="utf-8") as file:
-            return list(csv.DictReader(file, delimiter="\t"))
+        return CSVReader.read_data(DATA_FILE)
+
 
     def input_tinymce_message(self, message):
         driver = self.driver
