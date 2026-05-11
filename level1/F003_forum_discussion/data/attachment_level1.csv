@@ -1,0 +1,3 @@
+test_case_id	forum_url	action	seed_subject	seed_message	subject	message	attachment_path	expected_type	expected_text
+TC-003-013	https://school.moodledemo.net/mod/forum/view.php?id=906	reply_attachment	TC003013 Seed Discussion	This is a seed discussion for reply attachment test case TC-003-013.		This is a reply with image attachment for test case TC-003-013.	data/sample_image.png	success	This is a reply with image attachment for test case TC-003-013.
+TC-003-014	https://school.moodledemo.net/mod/forum/view.php?id=906	create_attachment			TC003014 Discussion With Image	This is a discussion with image attachment for test case TC-003-014.	data/sample_image.png	success	Your post was successfully added.

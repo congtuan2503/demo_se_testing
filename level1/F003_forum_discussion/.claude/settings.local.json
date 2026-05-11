@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pip --version)",
+      "Bash(pip3 --version)",
+      "Bash(pip show:*)",
+      "Bash(ls:*)",
+      "Bash(python -m unittest -v level1.F003_forum_discussion.test_delete_discussion_level1)",
+      "Bash(python -m unittest -v level1.F003_forum_discussion.test_delete_level1)",
+      "Bash(python -m unittest -v level1.F003_forum_discussion.test_edit_reply_level1)",
+      "Bash(python -m unittest -v level1.F003_forum_discussion.test_delete_reply_level1)",
+      "Bash(python -m unittest -v level1.F003_forum_discussion.test_attachment_level1)"
+    ]
+  }
+}

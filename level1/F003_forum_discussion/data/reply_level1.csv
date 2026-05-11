@@ -1,0 +1,3 @@
+test_case_id	forum_url	seed_subject	seed_message	reply_message	expected_type	expected_text
+TC-003-004	https://school.moodledemo.net/mod/forum/view.php?id=906	TC003004 Seed Discussion	This is a seed discussion for reply test case TC-003-004.	This is a valid reply message for test case TC-003-004.	success	This is a valid reply message for test case TC-003-004.
+TC-003-005	https://school.moodledemo.net/mod/forum/view.php?id=906	TC003005 Seed Discussion	This is a seed discussion for reply test case TC-003-005.		error_message	Required
