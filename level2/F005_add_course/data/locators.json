@@ -1,0 +1,23 @@
+{
+    "fullname_input": ["id", "id_fullname"],
+    "shortname_input": ["id", "id_shortname"],
+    "category_select": ["id", "id_category"],
+    "startdate_day": ["id", "id_startdate_day"],
+    "startdate_month": ["id", "id_startdate_month"],
+    "startdate_year": ["id", "id_startdate_year"],
+    "enddate_enabled": ["id", "id_enddate_enabled"],
+    "enddate_day": ["id", "id_enddate_day"],
+    "enddate_month": ["id", "id_enddate_month"],
+    "enddate_year": ["id", "id_enddate_year"],
+    "save_display_btn": ["id", "id_saveanddisplay"],
+    "save_return_btn": ["id", "id_saveandreturn"],
+    "cancel_btn": ["id", "id_cancel"],
+    "error_fullname": ["id", "id_error_fullname"],
+    "error_shortname": ["id", "id_error_shortname"],
+    "error_category": ["id", "id_error_category"],
+    "error_enddate": ["id", "id_error_enddate"],
+    "invalid_feedback": ["css selector", ".invalid-feedback"],
+    "page_header": ["xpath", "//header"],
+    "page_heading1": ["xpath", "//h1"],
+    "prerequisite_course": ["xpath", "//*[contains(text(), '{short_name}')]"]
+}

@@ -1,0 +1,13 @@
+test_case_id	url	full_name	short_name	category	start_date	end_date	action	expected_type	expected_text
+TC-005-001	https://school.moodledemo.net/course/edit.php?category=0	Biology 101	BIO101	1	01-6-2026		save_display	success	Biology 101
+TC-005-002	https://school.moodledemo.net/course/edit.php?category=0		BIO102	1			save_display	error_full_name	Missing full name
+TC-005-003	https://school.moodledemo.net/course/edit.php?category=0	Biology 103		1			save_display	error_short_name	Missing short name
+TC-005-004	https://school.moodledemo.net/course/edit.php?category=0	Biology 104	BIO104	0			save_display	error_category	You must supply a value here.
+TC-005-005	https://school.moodledemo.net/course/edit.php?category=0	Biology 105	EXIST-01	1			save_display	error_short_name	Short name is already used
+TC-005-006	https://school.moodledemo.net/course/edit.php?category=0	Biology 106	BIO106	1	01-6-2026	31-5-2026	save_display	error_date	The course end date must be after the start date.
+TC-005-007	https://school.moodledemo.net/course/edit.php?category=0	Biology 107	BIO107	1	01-6-2026	01-6-2026	save_display	success	Biology 107
+TC-005-008	https://school.moodledemo.net/course/edit.php?category=0					save_display	error_multiple	Missing full name
+TC-005-009	https://school.moodledemo.net/course/edit.php?category=0	Test	EXIST-01			save_display	error_multiple	Short name is already used
+TC-005-010	https://school.moodledemo.net/course/edit.php?category=0	Biology 110	BIO110	1			save_return	success_return	Manage courses
+TC-005-011	https://school.moodledemo.net/course/edit.php?category=0	Biology 111	BIO111	1			cancel	cancel	Manage courses
+TC-005-012	https://school.moodledemo.net/course/edit.php?category=0	X	X	1			save_display	success	X
