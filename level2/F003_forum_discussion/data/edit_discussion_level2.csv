@@ -1,0 +1,4 @@
+test_case_id	forum_url	seed_subject	seed_message	updated_subject	updated_message	expected_type	expected_text
+TC-003-006	https://school.moodledemo.net/mod/forum/view.php?id=906	TC003006 Seed Discussion	This is a seed discussion for edit test case TC-003-006.	TC003006 Updated Forum Topic	This is an updated discussion message for test case TC-003-006.	success	TC003006 Updated Forum Topic
+TC-003-007	https://school.moodledemo.net/mod/forum/view.php?id=906	TC003007 Seed Discussion	This is a seed discussion for edit test case TC-003-007.		This is a valid discussion message for test case TC-003-007.	error_subject	Required
+TC-003-008	https://school.moodledemo.net/mod/forum/view.php?id=906	TC003008 Seed Discussion	This is a seed discussion for edit test case TC-003-008.	TC003008 Updated Forum Topic		error_message	Required

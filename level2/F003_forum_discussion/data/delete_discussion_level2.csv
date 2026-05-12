@@ -1,0 +1,2 @@
+test_case_id	forum_url	seed_subject	seed_message	expected_type	expected_text
+TC-003-009	https://school.moodledemo.net/mod/forum/view.php?id=906	TC003009 Seed Discussion	This is a seed discussion for delete test case TC-003-009.	deleted	Discussion should be deleted
