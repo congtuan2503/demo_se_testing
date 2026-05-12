@@ -1,0 +1,4 @@
+test_case_id	scenario	expected_result
+NF-F001-REL-001	refresh_attempt_page_keeps_attempt_usable	attempt_ui_available_after_refresh
+NF-F001-REL-002	leave_and_continue_attempt_restores_attempt	continue_attempt_available
+NF-F001-REL-003	reopen_quiz_page_after_navigation_keeps_flow_usable	attempt_button_or_continue_available

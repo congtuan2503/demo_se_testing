@@ -74,6 +74,9 @@ python -m unittest discover -s level2/F003_forum_discussion -p "test_*.py" -v
 # F005 Add Course (Level 2)
 python -m unittest discover -s level2/F005_add_course -p "test_*.py" -v
 
+# F001 Quiz Attempt and Result Review (Non-functional)
+python -m unittest discover -s non_functional/F001_quiz_attempt_review -p "test_*.py" -v
+
 # F003 Forum Discussion (Non-functional)
 python -m unittest discover -s non_functional/F003_forum_discussion -p "test_*.py" -v
 
