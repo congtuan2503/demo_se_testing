@@ -56,6 +56,12 @@ All commands should be run **from the project root** (`demo_se_testing/`).
 ### Run tests for a specific feature
 
 ```bash
+# F001 Quiz Attempt and Result Review (Level 1)
+python -m unittest discover -s level1/F001_quiz_attempt_review -p "test_*.py" -v
+
+# F001 Quiz Attempt and Result Review (Level 2)
+python -m unittest discover -s level2/F001_quiz_attempt_review -p "test_*.py" -v
+
 # F003 Forum Discussion (Level 1)
 python -m unittest discover -s level1/F003_forum_discussion -p "test_*.py" -v
 

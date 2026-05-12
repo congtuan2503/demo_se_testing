@@ -263,7 +263,7 @@ class Level1DataDrivenTest(unittest.TestCase):
 
 	# ===== Main test =====
 	def test_level1_data_driven(self):
-		csv_path = os.path.join(os.path.dirname(__file__), "data_level1.csv")
+		csv_path = os.path.join(os.path.dirname(__file__), "data", "data_level_1.csv")
 
 		with open(csv_path, mode="r", encoding="utf-8-sig", newline="") as file:
 			reader = csv.DictReader(file)
