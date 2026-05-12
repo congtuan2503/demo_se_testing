@@ -1,0 +1,16 @@
+test_case_id,action_type,concept,definition,search_term,letter,expected_type,expected_text
+TC-004-001,add,Bolsheviks,Testing for definition,,,success,Bolsheviks
+TC-004-002,add,,Definition without concept,,,error_concept,You must supply a value here.
+TC-004-003,add,Concept without def,,,,error_definition,Required
+TC-004-004,add,,,,,error_both,You must supply a value here.
+TC-004-005,add,   ,Some meaningful words,,,success,Some meaningful words
+TC-004-006,add,lqvnntgunhfsgfllcopjpdlvelgrpiikmvinonoazpgpmpsrpklreapcgheydfjrwneunzgnakldchtplcckphmxlskvoxikvdjowiyizrxzoimyfejsnyxdiysppfohoypmcgebmzlubkuyceeviquojoberpwgbmnqfurbexxpbejidomihqhitkxzusncrdhvwlmeulcecftlkbswgttxmgaqjtsfwidjzszntgzuexcnujufgpjpcvkhfrhb,abc,,,error_db,Error writing to database
+TC-004-007,add,April Theses,duplicated concept,,,error_duplicate,This concept already exists. No duplicates allowed in this glossary.
+TC-004-008,add_and_search_and_browse,New Soviet,Council/Assembly,New Soviet,N,success_search,Council/Assembly
+TC-004-009,search,,,Alexander Kerensky,,success,Kerensky
+TC-004-010,search,,,xyzabc,,not_found,No entries found in this section
+TC-004-011,search,,,soviet,,success,Soviet
+TC-004-012,browse,,,,R,success,Russian Civil War
+TC-004-013,browse,,,,Z,not_found,No entries found in this section
+TC-004-014,search,,,Alex,,success,Alexander Kerensky
+TC-004-015,search,,,,,success_multiple,Alexander Kerensky|April Theses|Father Gapon
