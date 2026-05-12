@@ -1,0 +1,5 @@
+test_case_id	forum_url	scenario	threshold_seconds	expected_text
+NF-PERF-001	https://school.moodledemo.net/mod/forum/view.php?id=906	forum_page_load	8	page
+NF-PERF-002	https://school.moodledemo.net/mod/forum/view.php?id=906	add_discussion_form_load	8	id_subject
+NF-PERF-003	https://school.moodledemo.net/mod/forum/view.php?id=906	validation_error_display	5	Required
+NF-PERF-004	https://school.moodledemo.net/mod/forum/view.php?id=906	create_discussion_submit	15	Your post was successfully added.
