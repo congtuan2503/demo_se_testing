@@ -14,6 +14,7 @@ def main():
     test_dirs = [
         "level1/F003_forum_discussion",
         "level1/F005_add_course",
+        "level2/F003_forum_discussion",
         "level2/F005_add_course",
         "non_functional/F005_add_course",
     ]
