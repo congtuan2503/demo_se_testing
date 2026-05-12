@@ -45,8 +45,8 @@ class Level1DataDrivenTest(unittest.TestCase):
 		self.loc_link_quiz = (By.PARTIAL_LINK_TEXT, "Balancing Chemical Equations")
 		self.loc_btn_attempt_quiz = (
 			By.XPATH,
-			"//button[contains(., 'Attempt quiz') or contains(., 'Re-attempt quiz')]"
-			" | //input[contains(@value, 'Attempt quiz') or contains(@value, 'Re-attempt quiz')]",
+			"//button[contains(., 'Attempt quiz') or contains(., 'Re-attempt quiz') or contains(., 'Continue your attempt')]"
+			" | //input[contains(@value, 'Attempt quiz') or contains(@value, 'Re-attempt quiz') or contains(@value, 'Continue your attempt')]",
 		)
 		self.loc_inputs_quiz = (By.XPATH, "//input[contains(@id, '_answer')]")
 		self.loc_btn_next = (By.ID, "mod_quiz-next-nav")
@@ -186,12 +186,24 @@ class Level1DataDrivenTest(unittest.TestCase):
 			raise AssertionError(f"{label} missing: {', '.join(sorted(remaining))}")
 
 	def _get_modal_text(self):
-		modal = self.wait.until(
-			EC.presence_of_element_located(
-				(By.XPATH, "//div[contains(@class, 'modal') or @role='dialog']")
+		def _get_visible_modal_text(driver):
+			modals = driver.find_elements(
+				By.XPATH,
+				"//div[contains(@class, 'modal') or @role='dialog']",
 			)
-		)
-		return modal.text
+			for modal in modals:
+				if modal.is_displayed():
+					text = modal.get_attribute("textContent")
+					if text and text.strip():
+						return text
+			return None
+
+		return self.wait.until(_get_visible_modal_text)
+
+	def _normalize_text(self, text):
+		if not text:
+			return ""
+		return " ".join(text.split())
 
 	def _get_warning_text(self, expected_status):
 		marker = "Questions without a response"
@@ -211,9 +223,19 @@ class Level1DataDrivenTest(unittest.TestCase):
 
 		# 8. Submit all and finish (modal confirm if present)
 		self._wait_click(self.loc_btn_submit_all)
-		modal_text = self._get_modal_text()
-
 		warning_text = self._get_warning_text(expected_status)
+		if warning_text:
+			marker = "Questions without a response"
+			try:
+				WebDriverWait(self.driver, 5).until(
+					lambda driver: marker in self._normalize_text(self._get_modal_text())
+				)
+			except TimeoutException:
+				pass
+		modal_text = self._normalize_text(self._get_modal_text())
+		if modal_text:
+			seen_texts.append(modal_text)
+		warning_text = self._normalize_text(warning_text)
 		if warning_text:
 			if warning_text not in modal_text:
 				raise AssertionError(f"Popup warning missing: {warning_text}")
@@ -241,7 +263,7 @@ class Level1DataDrivenTest(unittest.TestCase):
 
 	# ===== Main test =====
 	def test_level1_data_driven(self):
-		csv_path = os.path.join(os.path.dirname(__file__), "data/data_level_1.csv")
+		csv_path = os.path.join(os.path.dirname(__file__), "data_level1.csv")
 
 		with open(csv_path, mode="r", encoding="utf-8-sig", newline="") as file:
 			reader = csv.DictReader(file)
