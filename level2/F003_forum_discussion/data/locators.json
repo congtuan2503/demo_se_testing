@@ -1,0 +1,67 @@
+{
+    "page": ["id", "page"],
+
+    "login_username": ["id", "username"],
+    "login_password": ["id", "password"],
+    "login_button": ["id", "loginbtn"],
+    "user_menu_toggle": ["id", "user-menu-toggle"],
+
+    "add_discussion_btn": ["css selector", "[data-action='new-discussion']"],
+    "add_discussion_link": ["css selector", "a[href*='mod/forum/post.php']"],
+    "add_discussion_link_text": ["link text", "Add a new discussion topic"],
+    "add_discussion_link_text_alt": ["link text", "Add discussion topic"],
+    "add_discussion_partial": ["partial link text", "Add a new discussion"],
+    "add_discussion_partial_alt": ["partial link text", "Add a new"],
+
+    "subject_input": ["id", "id_subject"],
+    "submit_button": ["id", "id_submitbutton"],
+
+    "tinymce_iframe": ["css selector", "iframe.tox-edit-area__iframe"],
+    "tinymce_body": ["id", "tinymce"],
+    "message_textarea": ["css selector", "textarea#id_message, textarea[name=\"message\"]"],
+
+    "success_post_added": ["xpath", "//*[contains(text(), 'Your post was successfully added.')]"],
+    "success_post_updated": ["xpath", "//*[contains(text(), 'post was updated') or contains(text(), 'successfully updated') or contains(text(), 'successfully added')]"],
+
+    "error_subject": ["id", "id_error_subject"],
+    "error_message": ["id", "id_error_message"],
+    "error_message_editor": ["id", "id_error_message_editor"],
+
+    "reply_link": ["link text", "Reply"],
+    "reply_textarea": ["css selector", "textarea[name='post']"],
+    "reply_submit_button": ["xpath", ".//button[contains(normalize-space(), 'Post to forum') or contains(@class, 'btn-primary')]"],
+    "advanced_button": ["xpath", "//form[contains(@id, 'inpage-reply')]//button[contains(normalize-space(), 'Advanced')]"],
+    "advanced_button_fallback": ["xpath", "//button[contains(normalize-space(), 'Advanced')] | //input[contains(@value, 'Advanced')] | //a[contains(normalize-space(), 'Advanced')]"],
+
+    "edit_link": ["link text", "Edit"],
+    "delete_link": ["link text", "Delete"],
+
+    "confirm_delete_button": ["xpath", "//button[contains(normalize-space(), 'Continue')] | //input[@type='submit' and contains(@value, 'Continue')] | //button[contains(normalize-space(), 'Delete')] | //input[@type='submit' and contains(@value, 'Delete')] | //button[contains(normalize-space(), 'Yes')] | //input[@type='submit' and contains(@value, 'Yes')]"],
+
+    "post_ancestor_forumpost": ["xpath", "//*[contains(normalize-space(), '{reply_text}')]/ancestor::*[contains(@class, 'forumpost')][1]//a[normalize-space()='{action_link}']"],
+    "post_ancestor_forum_post_container": ["xpath", "//*[contains(normalize-space(), '{reply_text}')]/ancestor::*[contains(@class, 'forum-post-container')][1]//a[normalize-space()='{action_link}']"],
+    "post_ancestor_post_content_container": ["xpath", "//*[contains(normalize-space(), '{reply_text}')]/ancestor::*[contains(@class, 'post-content-container')][1]//a[normalize-space()='{action_link}']"],
+    "post_ancestor_post": ["xpath", "//*[contains(normalize-space(), '{reply_text}')]/ancestor::*[contains(@class, 'post')][1]//a[normalize-space()='{action_link}']"],
+
+    "image_toolbar_button": ["css selector", "button.tox-tbtn[aria-label=\"Image\"]"],
+    "image_modal": ["css selector", ".modal.show"],
+    "image_file_input": ["css selector", "input[type='file']"],
+    "image_save_button": ["xpath", "//*[contains(@class, 'modal')]//button[normalize-space()='Save']"],
+    "image_alt_input_description": ["css selector", "input[aria-label*='description']"],
+    "image_alt_input_alt": ["css selector", "input[alt*='text']"],
+    "image_alt_label_alt_text": ["xpath", ".//label[contains(normalize-space(), 'Alternative text')]/following::input[1]"],
+    "image_alt_label_description": ["xpath", ".//label[contains(normalize-space(), 'description')]/following::input[1]"],
+    "image_alt_any_text_input": ["xpath", ".//input[@type='text' and not(@type='file')]"],
+    "decorative_checkbox": ["xpath", ".//input[@type='checkbox' and (contains(@aria-label, 'Decorative') or contains(@id, 'decorative') or contains(@name, 'decorative'))]"],
+    "decorative_checkbox_fallback": ["xpath", ".//label[contains(normalize-space(), 'Decorative')]/preceding-sibling::input[@type='checkbox'] | .//label[contains(normalize-space(), 'Decorative')]/following-sibling::input[@type='checkbox'] | .//label[contains(normalize-space(), 'Decorative')]//input[@type='checkbox']"],
+
+    "discussion_link_template": ["xpath", "//a[contains(normalize-space(), '{subject}')]"],
+    "text_contains_template": ["xpath", "//*[contains(normalize-space(), '{text}')]"],
+    "subject_heading_h3": ["xpath", "//h3[contains(normalize-space(), '{subject}')]"],
+    "subject_heading_h2": ["xpath", "//h2[contains(normalize-space(), '{subject}')]"],
+    "subject_link": ["xpath", "//a[contains(normalize-space(), '{subject}')]"],
+
+    "invalid_feedback": ["xpath", "//*[contains(@class, 'invalid-feedback') and contains(normalize-space(), '{text}')]"],
+    "form_control_feedback": ["xpath", "//*[contains(@class, 'form-control-feedback') and contains(normalize-space(), '{text}')]"],
+    "error_id_contains": ["xpath", "//*[contains(@id, 'error') and contains(normalize-space(), '{text}')]"]
+}

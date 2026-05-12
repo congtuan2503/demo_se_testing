@@ -62,6 +62,9 @@ python -m unittest discover -s level1/F003_forum_discussion -p "test_*.py" -v
 # F005 Add Course (Level 1)
 python -m unittest discover -s level1/F005_add_course -p "test_*.py" -v
 
+# F003 Forum Discussion (Level 2)
+python -m unittest discover -s level2/F003_forum_discussion -p "test_*.py" -v
+
 # F005 Add Course (Level 2)
 python -m unittest discover -s level2/F005_add_course -p "test_*.py" -v
 

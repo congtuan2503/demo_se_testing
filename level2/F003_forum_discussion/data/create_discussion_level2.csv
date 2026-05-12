@@ -1,0 +1,4 @@
+test_case_id	forum_url	subject	message	expected_type	expected_text
+TC-003-001	https://school.moodledemo.net/mod/forum/view.php?id=906	TC003001 Forum Topic	This is a valid discussion message for test case TC-003-001.	success	Your post was successfully added.
+TC-003-002	https://school.moodledemo.net/mod/forum/view.php?id=906		This is a valid discussion message for test case TC-003-002	error_subject	Required
+TC-003-003	https://school.moodledemo.net/mod/forum/view.php?id=906	TC003003 Empty Message Test		error_message	Required
