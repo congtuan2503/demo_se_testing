@@ -1,0 +1,48 @@
+{
+  "base_url": "https://school.moodledemo.net/",
+  "locators": {
+    "login_link": { "by": "LINK_TEXT", "value": "Log in" },
+    "input_username": { "by": "ID", "value": "username" },
+    "input_password": { "by": "ID", "value": "password" },
+    "btn_login": { "by": "ID", "value": "loginbtn" },
+    "link_my_courses": { "by": "LINK_TEXT", "value": "My courses" },
+    "link_course": { "by": "PARTIAL_LINK_TEXT", "value": "Chemical Nomenclature" },
+    "link_quiz": { "by": "PARTIAL_LINK_TEXT", "value": "Balancing Chemical Equations" },
+    "btn_attempt_quiz": {
+      "by": "XPATH",
+      "value": "//button[contains(., 'Attempt quiz') or contains(., 'Re-attempt quiz') or contains(., 'Continue your attempt')] | //input[contains(@value, 'Attempt quiz') or contains(@value, 'Re-attempt quiz') or contains(@value, 'Continue your attempt')]"
+    },
+    "inputs_quiz": {
+      "by": "XPATH",
+      "value": "//input[contains(@id, '_answer')]"
+    },
+    "btn_next": { "by": "ID", "value": "mod_quiz-next-nav" },
+    "finish_attempt": {
+      "by": "XPATH",
+      "value": "//a[contains(., 'Finish attempt...')] | //button[contains(., 'Finish attempt...')] | //input[contains(@value, 'Finish attempt...')]"
+    },
+    "btn_submit_all": {
+      "by": "XPATH",
+      "value": "//button[contains(., 'Submit all and finish')] | //input[contains(@value, 'Submit all and finish')]"
+    },
+    "btn_submit_cancel": {
+      "by": "XPATH",
+      "value": "//div[contains(@class, 'modal') or @role='dialog']//button[contains(., 'Cancel')] | //div[contains(@class, 'modal') or @role='dialog']//input[contains(@value, 'Cancel')]"
+    },
+    "btn_submit_confirm": {
+      "by": "XPATH",
+      "value": "//div[contains(@class, 'modal') or @role='dialog']//button[contains(., 'Submit all and finish')] | //div[contains(@class, 'modal') or @role='dialog']//input[contains(@value, 'Submit all and finish')]"
+    },
+    "btn_finish_review": {
+      "by": "XPATH",
+      "value": "//button[contains(., 'Finish review')] | //input[contains(@value, 'Finish review')] | //a[contains(., 'Finish review')]"
+    },
+    "modal_dialog": {
+      "by": "XPATH",
+      "value": "//div[contains(@class, 'modal') or @role='dialog']"
+    },
+    "body": { "by": "TAG_NAME", "value": "body" },
+    "user_menu": { "by": "ID", "value": "user-menu-toggle" },
+    "link_logout": { "by": "LINK_TEXT", "value": "Log out" }
+  }
+}

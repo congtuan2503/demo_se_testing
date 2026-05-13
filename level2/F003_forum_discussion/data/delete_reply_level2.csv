@@ -1,0 +1,2 @@
+test_case_id	forum_url	seed_subject	seed_message	reply_message	expected_type	expected_text
+TC-003-012	https://school.moodledemo.net/mod/forum/view.php?id=906	TC003012 Seed Discussion	This is a seed discussion for delete reply test case TC-003-012.	This is the reply message to be deleted for test case TC-003-012.	deleted	Reply should be deleted

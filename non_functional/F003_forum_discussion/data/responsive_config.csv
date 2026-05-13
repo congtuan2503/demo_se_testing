@@ -1,0 +1,4 @@
+test_case_id	forum_url	viewport_name	width	height	expected_elements
+NF-RESP-001	https://school.moodledemo.net/mod/forum/view.php?id=906	desktop	1366	768	add_discussion,subject_input,tinymce
+NF-RESP-002	https://school.moodledemo.net/mod/forum/view.php?id=906	tablet	768	1024	add_discussion,subject_input,tinymce
+NF-RESP-003	https://school.moodledemo.net/mod/forum/view.php?id=906	mobile	390	844	add_discussion,subject_input,tinymce

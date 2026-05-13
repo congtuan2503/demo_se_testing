@@ -68,6 +68,11 @@ python -m unittest discover -s level2/F002_assignment_submission -p "test_*.py" 
 
 # F002 Assignment Submission (Single module)
 python -m unittest level1.F002_assignment_submission.test_add_submission_level1 -v
+# F001 Quiz Attempt and Result Review (Level 1)
+python -m unittest discover -s level1/F001_quiz_attempt_review -p "test_*.py" -v
+
+# F001 Quiz Attempt and Result Review (Level 2)
+python -m unittest discover -s level2/F001_quiz_attempt_review -p "test_*.py" -v
 
 # F003 Forum Discussion (Level 1)
 python -m unittest discover -s level1/F003_forum_discussion -p "test_*.py" -v
@@ -75,8 +80,17 @@ python -m unittest discover -s level1/F003_forum_discussion -p "test_*.py" -v
 # F005 Add Course (Level 1)
 python -m unittest discover -s level1/F005_add_course -p "test_*.py" -v
 
+# F003 Forum Discussion (Level 2)
+python -m unittest discover -s level2/F003_forum_discussion -p "test_*.py" -v
+
 # F005 Add Course (Level 2)
 python -m unittest discover -s level2/F005_add_course -p "test_*.py" -v
+
+# F001 Quiz Attempt and Result Review (Non-functional)
+python -m unittest discover -s non_functional/F001_quiz_attempt_review -p "test_*.py" -v
+
+# F003 Forum Discussion (Non-functional)
+python -m unittest discover -s non_functional/F003_forum_discussion -p "test_*.py" -v
 
 # F005 Non-functional tests
 python -m unittest discover -s non_functional/F005_add_course -p "test_*.py" -v
