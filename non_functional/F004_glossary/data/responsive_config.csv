@@ -1,0 +1,4 @@
+test_case_id,viewport_name,width,height,expected_elements
+TC-004-RESP-01,Desktop,1920,1080,add_entry_btn,search_input
+TC-004-RESP-02,Tablet,768,1024,add_entry_btn,search_input
+TC-004-RESP-03,Mobile,375,812,add_entry_btn,search_input

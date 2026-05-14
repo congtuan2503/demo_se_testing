@@ -1,0 +1,4 @@
+test_case_id,action,threshold_seconds,expected_type
+TC-004-PERF-01,page_load,10.0,success
+TC-004-PERF-02,add_form_load,5.0,success
+TC-004-PERF-03,search_action,5.0,success
