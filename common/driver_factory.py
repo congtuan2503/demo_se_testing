@@ -12,5 +12,5 @@ class DriverFactory:
         else:
             raise ValueError(f"Browser {browser} is not supported.")
         
-        driver.maximize_window()
+        # driver.maximize_window()
         return driver

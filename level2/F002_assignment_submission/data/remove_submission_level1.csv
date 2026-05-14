@@ -1,0 +1,2 @@
+Test ID,Action,Assignment URL,Expected Result
+TC-002-010,Remove,https://school.moodledemo.net/mod/assign/view.php?id=929,No submissions have been made yet

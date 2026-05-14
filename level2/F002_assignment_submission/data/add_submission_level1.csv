@@ -1,0 +1,10 @@
+Test ID,Test Case Name,Assignment URL,File Path,Text Content,Expected Result
+TC-002-001,Submit file only,https://school.moodledemo.net/mod/assign/view.php?id=871,/home/dmin/Testing/demo_se_testing/test_doc.doc,,Submitted for grading
+TC-002-002,Submit Online Text only,https://school.moodledemo.net/mod/assign/view.php?id=929,,abcdef,Submitted for grading
+TC-002-003,Submit maximum file size allowed,https://school.moodledemo.net/mod/assign/view.php?id=871,/home/dmin/Testing/demo_se_testing/test_doc.doc,,Submitted for grading
+TC-002-004,Submit oversize file allowed,https://school.moodledemo.net/mod/assign/view.php?id=871,/home/dmin/Testing/demo_se_testing/1mb.pdf,,The maximum size you can upload is 1 MB
+TC-002-005,Submit exceeding maximum number of files,https://school.moodledemo.net/mod/assign/view.php?id=871,/home/dmin/Testing/demo_se_testing/test_doc.doc,,You are allowed to attach a maximum of 1 file(s)
+TC-002-006,Submit zero file,https://school.moodledemo.net/mod/assign/view.php?id=871,,,Nothing was submitted
+TC-002-007,Late Submission,https://school.moodledemo.net/mod/assign/view.php?id=1350,/home/dmin/Testing/demo_se_testing/test_doc.doc,,Assignment was submitted
+TC-002-008,User Cancel Action,https://school.moodledemo.net/mod/assign/view.php?id=1350,/home/dmin/Testing/demo_se_testing/test_doc.doc,,No submissions have been made yet
+TC-002-009,Submit Duplicate Files,https://school.moodledemo.net/mod/assign/view.php?id=1350,/home/dmin/Testing/demo_se_testing/test_doc.doc,,A file with that name has already been attached

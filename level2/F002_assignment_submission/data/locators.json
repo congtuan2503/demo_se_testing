@@ -1,0 +1,48 @@
+{
+    "page_element":              ["id", "page"],
+
+    "add_submission_btn_1":      ["xpath", "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'submission')]"],
+    "add_submission_btn_2":      ["xpath", "//a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'submission')]"],
+    "add_submission_btn_3":      ["xpath", "//input[@type='submit' and contains(translate(@value, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'submission')]"],
+    "add_submission_btn_4":      ["xpath", "//*[contains(@id, 'submitbutton')]"],
+    "add_submission_btn_5":      ["xpath", "//div[@id='region-main']//form//button[@type='submit']"],
+
+    "submission_form":           ["css selector", ".mform, [role='main'] form"],
+
+    "remove_submission_btn":     ["xpath", "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'remove submission')] | //a[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'remove submission')]"],
+    "confirm_continue_btn":      ["xpath", "//button[contains(translate(., 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'continue')] | //input[contains(translate(@value, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ', 'abcdefghijklmnopqrstuvwxyz'), 'continue')]"],
+
+    "add_file_btn":              ["css selector", "a[title='Add...']"],
+    "recent_files_tab":          ["xpath", "//span[contains(text(), 'Recent files')] | //span[contains(text(), 'Server files')] | //a[contains(., 'Recent files')]"],
+    "upload_file_tab":           ["xpath", "//span[contains(text(), 'Upload a file')] | //a[contains(., 'Upload a file')] | //div[contains(@class, 'fp-repo') and contains(., 'Upload')]"],
+    "repo_upload_file":          ["name", "repo_upload_file"],
+    "upload_this_file_btn":      ["xpath", "//button[contains(text(), 'Upload this file')]"],
+    "select_this_file_btn":      ["xpath", "//button[contains(text(), 'Select this file')] | //button[contains(@class, 'fp-select-confirm')]"],
+
+    "file_exists_dialog":        ["css selector", ".fp-dlg"],
+    "overwrite_btn":             ["xpath", "//button[contains(text(), 'Overwrite')]"],
+    "rename_btn":                ["xpath", "//button[contains(text(), 'Rename')]"],
+    "fp_dlg_btn_fallback":       ["css selector", ".fp-dlg button.fp-dlg-butoverwrite, .fp-dlg button"],
+
+    "modal_error_area":          ["css selector", ".fp-content .fp-error, .moodle-dialogue-content .moodle-exception, .file-picker .fp-msg, .fp-content .alert, .fp-upload-error"],
+    "filepicker_close_btn":      ["css selector", ".filepicker .yui3-button-close, .moodle-dialogue-base .closebutton, //button[contains(@class,'closebutton')], .fp-formcreate .fp-cancel-btn"],
+    "filepicker_mask":           ["css selector", ".moodle-dialogue-base, .yui3-widget-mask"],
+
+    "fm_file_icon":              ["css selector", ".filemanager .fp-filename-icon"],
+
+    "tinymce_iframe":            ["css selector", "iframe[id*='_ifr'], iframe.tox-edit-area__iframe, iframe[id^='tinymce']"],
+    "tinymce_body":              ["xpath", "//body"],
+    "atto_editor":               ["css selector", "[contenteditable='true']"],
+    "text_textarea":             ["css selector", "textarea[name*='onlinetext'], textarea[name*='text']"],
+
+    "save_btn":                  ["xpath", "//button[contains(translate(., 'SAVE', 'save'), 'save')] | //input[contains(translate(@value, 'SAVE', 'save'), 'save')]"],
+    "save_btn_alt1":             ["xpath", "//input[@type='submit'][contains(@value,'Save changes')]"],
+    "save_btn_alt2":             ["xpath", "//button[contains(normalize-space(),'Save changes')]"],
+
+    "cancel_submission_btn":     ["xpath", "//button[contains(translate(., 'CANCEL', 'cancel'), 'cancel')] | //input[contains(translate(@value, 'CANCEL', 'cancel'), 'cancel')]"],
+    "cancel_btn_alt1":           ["name", "cancel"],
+    "cancel_btn_alt2":           ["xpath", "//input[@type='submit'][contains(@value,'Cancel')]"],
+    "cancel_btn_alt3":           ["xpath", "//button[contains(normalize-space(),'Cancel')]|//a[contains(normalize-space(),'Cancel')]"],
+    
+    "content_area":              ["css selector", "[role='main'], #region-main, body"]
+}
