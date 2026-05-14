@@ -1,0 +1,14 @@
+{
+    "add_entry_btn": ["xpath", "//button[contains(text(), 'Add entry') or contains(text(), 'Add a new entry')]"],
+    "add_entry_btn_alt": ["xpath", "//input[@type='submit' and contains(@value, 'Add a new entry')]"],
+    "concept_input": ["id", "id_concept"],
+    "tinymce_body": ["id", "tinymce"],
+    "submit_btn": ["id", "id_submitbutton"],
+    "error_concept": ["id", "id_error_concept"],
+    "error_definition": ["id", "id_error_definition_editor"],
+    "error_db": ["xpath", "//p[contains(@class, 'errormessage')]"],
+    "search_input": ["name", "hook"],
+    "fullsearch_cb": ["name", "fullsearch"],
+    "text_xpath": ["xpath", "//*[contains(., '{text}')]"],
+    "letter_link": ["link text", "{letter}"]
+}
