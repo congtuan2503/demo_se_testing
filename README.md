@@ -25,6 +25,10 @@ demo_se_testing/
 │   └── assertions.py                # Reusable assertion helpers
 │
 ├── level1/                          # Level 1: Functional UI tests (hardcoded locators)
+│   ├── F002_assignment_submission/  # Assignment submission CRUD tests
+│   │   ├── data/                    # Test data CSVs
+│   │   └── test_*.py                
+│   │
 │   ├── F003_forum_discussion/       # Forum discussion CRUD tests
 │   │   ├── data/                    # Test data CSVs + sample assets
 │   │   └── test_*.py                # 7 test modules, 14 test cases
@@ -56,6 +60,14 @@ All commands should be run **from the project root** (`demo_se_testing/`).
 ### Run tests for a specific feature
 
 ```bash
+# F002 Assignment Submission (Level 1)
+python -m unittest discover -s level1/F002_assignment_submission -p "test_*.py" -v
+
+# F002 Assignment Submission (Level 2)
+python -m unittest discover -s level2/F002_assignment_submission -p "test_*.py" -v
+
+# F002 Assignment Submission (Single module)
+python -m unittest level1.F002_assignment_submission.test_add_submission_level1 -v
 # F001 Quiz Attempt and Result Review (Level 1)
 python -m unittest discover -s level1/F001_quiz_attempt_review -p "test_*.py" -v
 
