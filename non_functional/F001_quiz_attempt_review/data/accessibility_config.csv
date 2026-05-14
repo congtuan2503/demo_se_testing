@@ -1,0 +1,4 @@
+test_case_id	scenario	expected_controls
+NF-F001-A11Y-001	quiz_entry_controls_have_accessible_names	course_link,quiz_link,attempt_button
+NF-F001-A11Y-002	quiz_attempt_controls_are_keyboard_reachable	answer_inputs,next_button,finish_attempt
+NF-F001-A11Y-003	quiz_answer_inputs_are_usable	answer_inputs
